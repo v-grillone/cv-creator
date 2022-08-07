@@ -1,5 +1,5 @@
 const ResumeExperiance = ({ experianceValues }) => {
-  // experianceValues.map(experiance => console.log(experiance));
+  
   return (
     <div className="experiance-container">
         <h6 className="text-2xl">Experiance</h6>
@@ -7,11 +7,11 @@ const ResumeExperiance = ({ experianceValues }) => {
         {experianceValues.map((experiance) => (
           <div key={experiance.id} className='experiance flex flex-row space-x-10 mt-4'>
             <div className="experiance-dates">
-              <p>{`${experiance.from} - ${experiance.to}`}</p>
+              <p className="font-bold">{`${experiance.from} - ${experiance.to}`}</p>
             </div>
-            <div className="experiance-data flex flex-col">
-              <p>{experiance.position}</p>
-              <p>{`${experiance.company}, ${experiance.city}`}</p>
+            <div className="experiance-data flex flex-col space-y-4">
+              <p className="text-lg">{experiance.position}</p>
+              <p className="italic">{`${experiance.company}, ${experiance.city}`}</p>
             </div>
           </div>
         ))}

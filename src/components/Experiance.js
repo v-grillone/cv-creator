@@ -40,11 +40,11 @@ const Experiance = ({ experianceAdd, experianceDelete, experianceExamples }) => 
       {experianceList.map((experiance, index) => (
         <div key={experiance.key} className='flex flex-col space-y-4'>
           <form id={`experiance-${experiance.key}`} className='experiance-form flex flex-col space-y-4 experiance-form'>
-            <input className='py-1 pl-2 border rounded' type="text" placeholder='Position' onChange={experianceChange} />
-            <input className='py-1 pl-2 border rounded' type="text" placeholder='Company' onChange={experianceChange} />
-            <input className='py-1 pl-2 border rounded' type="text" placeholder='City' onChange={experianceChange} />
-            <input className='py-1 pl-2 border rounded' type="text" placeholder='From' onChange={experianceChange} />
-            <input className='py-1 pl-2 border rounded' type="text" placeholder='To' onChange={experianceChange} />
+            <input className='py-1 pl-2 border rounded' id="experiance-position" type="text" placeholder='Position' onChange={experianceChange} />
+            <input className='py-1 pl-2 border rounded' id="experiance-company" type="text" placeholder='Company' onChange={experianceChange} />
+            <input className='py-1 pl-2 border rounded' id="experiance-city" type="text" placeholder='City' onChange={experianceChange} />
+            <input className='py-1 pl-2 border rounded' id="experiance-from" type="text" placeholder='From' onChange={experianceChange} />
+            <input className='py-1 pl-2 border rounded' id="experiance-to" type="text" placeholder='To' onChange={experianceChange} />
           </form>
           {experianceList.length > 1 ? <button className="border border-gray-300 p-2 text-white bg-gray-700 text-lg hover:bg-gray-900" onClick={e => deleteExperiance(e, index)}>Delete</button> : ''}
         </div>

@@ -82,7 +82,7 @@ function App() {
       firstName: '',
       lastName: '',
       title: '',
-      photo: '',
+      photo: null,
       address: '',
       phone: '',
       email: '',
@@ -100,74 +100,76 @@ function App() {
   }
 
   // Example button functionality
-  // const btnExample = () => {
-  //   const PersonalTemplate = {
-  //     firstName: 'Bob',
-  //     lastName: 'Smith',
-  //     title: 'Software Developer',
-  //     photo: '',
-  //     address: '123 Any Street',
-  //     phone: '123-456-7890',
-  //     email: 'bob-smith02@gmail.com',
-  //     description: 'Diligent software engineer with 5+ years experience in commercial application development. Eager to join Company. to build innovative and cutting edge business solutions for the impressive suite of clients within its global reach. In previous roles, slashed downtime by 25% and ensured 98% on-time project completion. Also identified and dealt with a significant process bottleneck that boosted coding efficiency by 35% when resolved.'
-  //   }
+  const btnExample = () => {
+    const personalTemplate = {
+      firstName: 'Bob',
+      lastName: 'Smith',
+      title: 'Software Developer',
+      photo: require('./assets/fake-profile-pic.jpg'),
+      address: '123 Any Street',
+      phone: '123-456-7890',
+      email: 'bob-smith02@gmail.com',
+      description: 'Diligent software engineer with 5+ years experience in commercial application development. Eager to join Company. to build innovative and cutting edge business solutions for the impressive suite of clients within its global reach. In previous roles, slashed downtime by 25% and ensured 98% on-time project completion. Also identified and dealt with a significant process bottleneck that boosted coding efficiency by 35% when resolved.'
+    }
 
-  //   const experianceTemplate = [
-  //     {
-  //       id: '1',
-  //       position: 'jr Software Developer',
-  //       company: 'Google',
-  //       city: 'San Francisco',
-  //       from: '2015',
-  //       to: '2017'},
+    // Adding personal values to input text fields
 
-  //     {
-  //       id: '2',
-  //       position: 'Software Developer',
-  //       company: 'Shopify',
-  //       city: 'Waterloo',
-  //       from: '2017',
-  //       to: '2020'
-  //     },
+    document.getElementById('first-name-input').value = personalTemplate.firstName;
+    document.getElementById('last-name-input').value = personalTemplate.lastName;
+    document.getElementById('title-input').value = personalTemplate.title ;
+    document.getElementById('address-input').value = personalTemplate.address;
+    document.getElementById('phone-input').value = personalTemplate.phone;
+    document.getElementById('email-input').value = personalTemplate.email;
+    document.getElementById('description-input').value = personalTemplate.description;
 
-  //     {
-  //       id: '3',
-  //       position: 'Team Leader',
-  //       company: 'Mcdonalds',
-  //       city: 'Toronto',
-  //       from: '2012',
-  //       to: '2015'
-  //     },
-  //   ]
+    const experianceTemplate = [
+      {
+        id: '1',
+        position: 'jr Software Developer',
+        company: 'Google',
+        city: 'San Francisco',
+        from: '2015',
+        to: '2017'}
+    ]
 
-  //   const educationTemplate = [
-  //     {
-  //       id: '1',
-  //       city: 'Toronto',
-  //       education: 'Degree',
-  //       subject: 'Computer Science',
-  //       from: '2010',
-  //       to: '2014'
-  //     },
-  //     {
-  //       id: '2',
-  //       city: 'Mississuaga',
-  //       education: 'Diploma',
-  //       subject: 'High School',
-  //       from: '2006',
-  //       to: '2010'
-  //     }
-  //   ]
+    // Adding experiance values to input text fields
 
-  //   setPersonalInputValues(PersonalTemplate);
-  //   setExperiances(experianceTemplate);
-  //   setEducations(educationTemplate);
-  // }
+    document.getElementById('experiance-position').value = experianceTemplate[0].position;
+    document.getElementById('experiance-company').value = experianceTemplate[0].company;
+    document.getElementById('experiance-city').value = experianceTemplate[0].city;
+    document.getElementById('experiance-from').value = experianceTemplate[0].from;
+    document.getElementById('experiance-to').value = experianceTemplate[0].to;
+
+    const educationTemplate = [
+      {
+        id: '1',
+        institution: 'University of Toronto',
+        city: 'Toronto',
+        education: 'Degree',
+        subject: 'Computer Science',
+        from: '2010',
+        to: '2014'
+      }
+    ]
+
+        // Adding education values to input text fields
+
+        document.getElementById('education-institution').value = educationTemplate[0].institution;
+        document.getElementById('education-city').value = educationTemplate[0].city;
+        document.getElementById('education-education').value = experianceTemplate[0].education;
+        document.getElementById('education-subject').value = educationTemplate[0].subject;
+        document.getElementById('education-from').value = educationTemplate[0].from;
+        document.getElementById('education-to').value = educationTemplate[0].to;
+
+    setPersonalInputValues(personalTemplate);
+    setExperiances(experianceTemplate);
+    setEducations(educationTemplate);
+  }
 
   return (
     <div className="App">
       <Header />
-      <InputBox personalInfoValue={personalInfoValue} experianceAdd={experianceAdd} experianceDelete={experianceDelete} educationAdd={educationAdd} educationDelete={educationDelete} btnReset={btnReset} />
+      <InputBox personalInfoValue={personalInfoValue} experianceAdd={experianceAdd} experianceDelete={experianceDelete} educationAdd={educationAdd} educationDelete={educationDelete} btnReset={btnReset} btnExample={btnExample} />
       <Resume personalInputValues={personalInfoValues} experianceValues={experiances} educationValues={educations} />     
     </div>
   );

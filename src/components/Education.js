@@ -40,12 +40,12 @@ const Education = ({ educationAdd, educationDelete }) => {
       {educationList.map((education, index) => (
         <div key={education.key} className='flex flex-col space-y-4'>
           <form id={`education-${education.key}`} className='education-form flex flex-col space-y-4'>
-            <input className='py-1 pl-2 border rounded' type="text" placeholder='Institution name' onChange={educationChange} />
-            <input className='py-1 pl-2 border rounded' type="text" placeholder='City' onChange={educationChange} />
-            <input className='py-1 pl-2 border rounded' type="text" placeholder='Education type' onChange={educationChange} />
-            <input className='py-1 pl-2 border rounded' type="text" placeholder='Subject' onChange={educationChange} />
-            <input className='py-1 pl-2 border rounded' type="text" placeholder='From' onChange={educationChange} />
-            <input className='py-1 pl-2 border rounded' type="text" placeholder='To' onChange={educationChange} />
+            <input className='py-1 pl-2 border rounded' id="education-institution" type="text" placeholder='Institution name' onChange={educationChange} />
+            <input className='py-1 pl-2 border rounded' id="education-city" type="text" placeholder='City' onChange={educationChange} />
+            <input className='py-1 pl-2 border rounded' id="education-education" type="text" placeholder='Education type' onChange={educationChange} />
+            <input className='py-1 pl-2 border rounded' id="education-subject" type="text" placeholder='Subject' onChange={educationChange} />
+            <input className='py-1 pl-2 border rounded' id="education-from" type="text" placeholder='From' onChange={educationChange} />
+            <input className='py-1 pl-2 border rounded' id="education-to" type="text" placeholder='To' onChange={educationChange} />
           </form>
           {educationList.length > 1 ? <button className="border border-gray-300 p-2 text-white bg-gray-700 text-lg hover:bg-gray-900" onClick={e => deleteEducation(e, index)}>Delete</button> : ''}
         </div>
